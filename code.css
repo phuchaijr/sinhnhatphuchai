@@ -1,0 +1,174 @@
+/* Tiêu đề Chúc Mừng Sinh Nhật */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff4081;
+  text-align: center;
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Hiệu ứng hiện dần */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bố cục chính */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Bánh sinh nhật */
+.cake {
+  position: relative;
+  width: 200px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Các tầng bánh */
+.layer {
+  position: absolute;
+  background: #ff85a2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Tầng dưới cùng */
+.layer.bottom {
+  width: 260px;
+  height: 80px;
+  bottom: 0;
+}
+
+/* Tầng giữa */
+.layer.middle {
+  width: 200px;
+  height: 80px;
+  bottom: 50px;
+}
+
+/* Tầng trên cùng */
+.layer.top {
+  width: 100px;
+  height: 70px;
+  bottom: 100px;
+}
+
+/* Hiệu ứng kem chảy */
+.drip {
+  position: absolute;
+  width: 20px;
+  height: 30px;
+  background: #ffccd5;
+  border-radius: 50%;
+  top: -10px;
+}
+
+/* Bố trí kem chảy */
+.layer.bottom .drip {
+  left: 20px;
+}
+.layer.middle .drip {
+  left: 15px;
+}
+.layer.top .drip {
+  left: 10px;
+}
+/* Phần tử nến */
+.candle {
+  position: absolute;
+  width: 10px; /* Độ rộng của nến */
+  height: 40px; /* Chiều cao của nến */
+  background: #ffd700; /* Màu vàng */
+  border-radius: 5px;
+  top: -50px; /* Đặt nến cao hơn tầng trên cùng */
+}
+
+/* Tạo ngọn lửa */
+.candle::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: orange;
+  border-radius: 50%;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: flicker 1s infinite alternate;
+}
+
+/* Hiệu ứng lửa lung linh */
+@keyframes flicker {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+/* Bóng bay */
+.balloon {
+  position: absolute;
+  bottom: -100px; /* Xuất hiện từ ngoài màn hình */
+  width: 40px;
+  height: 50px;
+  background: red;
+  border-radius: 50%;
+  animation: floatUp 5s linear infinite;
+}
+
+/* Bóng bay nhiều màu */
+.balloon:nth-child(odd) {
+  background: blue;
+}
+.balloon:nth-child(even) {
+  background: yellow;
+}
+
+/* Hiệu ứng dây bóng */
+.balloon::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 50px;
+  background: black;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+}
+
+/* Hiệu ứng bay lên */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+body {
+  background: url("17.jpg") no-repeat center center/cover;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}

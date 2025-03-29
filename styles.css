@@ -1,0 +1,22 @@
+/* Ban đầu thư nằm dưới màn hình */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  transform: translateY(100vh); /* Bắt đầu từ dưới */
+  transition: transform 1s ease-in-out;
+}
+
+/* Khi trang tải xong, thư sẽ tự động trượt lên */
+.container.show {
+  transform: translateY(0);
+}
+
+/* Khi thư đóng, nó trượt xuống */
+.container.closed {
+  transform: translateY(100vh);
+}
+/* Hiển thị tiêu đề */

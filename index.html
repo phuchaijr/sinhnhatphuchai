@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thư chúc mừng sinh nhật tôiii</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: url("62772896.png") no-repeat center center/cover;
+      }
+      .container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .envelope {
+        position: relative;
+        width: 400px;
+        height: 260px;
+        background: #ffffff;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      }
+      .envelope::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 50%;
+        background: #e0e0e0;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        transition: transform 0.5s ease-in-out;
+      }
+      .letter {
+        position: absolute;
+        width: 260px;
+        height: 160px;
+        background: #ffebcd;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform 0.8s ease-in-out, opacity 0.8s;
+      }
+      .heart {
+        width: 40px;
+        height: 40px;
+        background-color: red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        border-radius: 50% 50% 0 0;
+        z-index: 2;
+        transition: opacity 0.5s ease-in-out;
+      }
+      .heart::before,
+      .heart::after {
+        content: "";
+        width: 40px;
+        height: 40px;
+        background-color: red;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .heart::before {
+        top: -20px;
+        left: 0;
+      }
+      .heart::after {
+        top: 0;
+        left: 20px;
+      }
+      .container.open .letter {
+        transform: translateY(-20px);
+        opacity: 1;
+      }
+      .container.open .envelope::before {
+        transform: rotateX(180deg);
+      }
+      .container.open .heart {
+        opacity: 0;
+      }
+      .container.closed .letter {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+      .container.closed .envelope::before {
+        transform: rotateX(0deg);
+      }
+      .container.closed .heart {
+        opacity: 1;
+      }
+      .link,
+      .home-button,
+      .close-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background: #ff4081;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+      .home-button {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+      }
+      .close-button {
+        margin-top: 20px;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      function openLetter() {
+        document.querySelector(".container").classList.remove("closed");
+        document.querySelector(".container").classList.add("open");
+      }
+      function closeLetter() {
+        document.querySelector(".container").classList.remove("open");
+        document.querySelector(".container").classList.add("closed");
+      }
+    </script>
+  </head>
+  <body>
+    <a class="home-button" href="index.html"> Đọc Lại Thư</a>
+    <div class="container closed" onclick="openLetter()">
+      <div class="envelope">
+        <div class="heart"></div>
+      </div>
+      <div class="letter">
+        <h1>Happy birthday to mee!</h1>
+        <pre>
+Chúc cho tôi tuổi mới vuii vẻ
+và thành công hơn.
+heppi heepi</pre
+        >
+        <a class="link" href="main.html ">Nhấn vào đây để nhận quà đặc biệt!</a>
+        <button class="close-button" onclick="closeLetter()">Đóng thư</button>
+      </div>
+    </div>
+    <script src="heppi.js"></script>
+  </body>
+</html>
