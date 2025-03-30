@@ -20,3 +20,84 @@
   transform: translateY(100vh);
 }
 /* Hiển thị tiêu đề */
+body {
+  background-color: skyblue;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+}
+
+/* Định dạng bóng bay */
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 50px;
+  height: 70px;
+  background-color: red;
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
+}
+/* Thư */
+.letter {
+  position: absolute;
+  width: 260px;
+  height: 160px;
+  background: #ffebcd;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(50%);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s, width 0.5s, height 0.5s;
+}
+
+/* Khi thư mở, mở rộng tờ giấy */
+.container.open .letter {
+  transform: translateY(0);
+  opacity: 1;
+  width: 80vw; /* Chiếm 80% chiều rộng màn hình */
+  height: 90vh; /* Chiếm 90% chiều cao màn hình */
+  background: burlywood; /* Màu giấy */
+  padding: 20px;
+  font-size: 1.5rem; /* Chữ lớn hơn */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Trang trí viền góc */
+.letter::before,
+.letter::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: url("hoa.jpg") no-repeat center;
+  background-size: contain;
+}
+
+/* Góc trái trên */
+.letter::before {
+  top: 10px;
+  left: 10px;
+}
+
+/* Góc phải dưới */
+.letter::after {
+  bottom: 10px;
+  right: 10px;
+}

@@ -50,22 +50,22 @@
 
 /* Tầng dưới cùng */
 .layer.bottom {
-  width: 260px;
-  height: 80px;
+  width: 360px;
+  height: 100px;
   bottom: 0;
 }
 
 /* Tầng giữa */
 .layer.middle {
-  width: 200px;
-  height: 80px;
-  bottom: 50px;
+  width: 290px;
+  height: 100px;
+  bottom: 55px;
 }
 
 /* Tầng trên cùng */
 .layer.top {
-  width: 100px;
-  height: 70px;
+  width: 180px;
+  height: 100px;
   bottom: 100px;
 }
 
@@ -96,7 +96,7 @@
   height: 40px; /* Chiều cao của nến */
   background: #ffd700; /* Màu vàng */
   border-radius: 5px;
-  top: -50px; /* Đặt nến cao hơn tầng trên cùng */
+  top: -39px; /* Đặt nến cao hơn tầng trên cùng */
 }
 
 /* Tạo ngọn lửa */
@@ -171,4 +171,33 @@ body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
+}
+body {
+  background-color: skyblue;
+  overflow: hidden;
+  margin: 0;
+  height: 100vh;
+}
+
+/* Định dạng bóng bay */
+.balloon {
+  position: absolute;
+  bottom: -100px;
+  width: 50px;
+  height: 70px;
+  background-color: red;
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) scale(1.2);
+    opacity: 0;
+  }
 }
